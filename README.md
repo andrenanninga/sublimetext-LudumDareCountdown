@@ -31,3 +31,7 @@ Example config:
 	"LudumDareCountdown_category": "compo"
 }
 ```
+
+## lowliet
+
+Based on the plugin [StatusBarTime](https://github.com/lowliet/sublimetext-StatusBarTime) by [lowliet](https://github.com/lowliet)
