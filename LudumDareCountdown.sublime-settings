@@ -1,0 +1,9 @@
+{
+	// Countdown update interval
+	"LudumDareCountdown_interval": 1000,
+
+	// Ludum Dare category
+	// compo - compo countdown (48 hour)
+	// jam - jam countdown (72 hour)
+	"LudumDareCountdown_category": "compo"
+}

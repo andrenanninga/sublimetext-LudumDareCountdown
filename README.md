@@ -6,7 +6,7 @@ Works with Sublime text 2 and 3
 
 ## Preview
 
-![preview](http://i.imgur.com/JBqxncq.png)
+![preview] (https://github.com/fakeyou/sublimetext-LudumDareCountdown/raw/master/preview.png)
 
 ## How to install
 
