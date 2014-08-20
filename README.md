@@ -6,7 +6,7 @@ Works with Sublime text 2 and 3
 
 ## Preview
 
-![preview](http://i.imgur.com/cNf6OAY.png)
+![preview](http://i.imgur.com/JBqxncq.png)
 
 ## How to install
 
