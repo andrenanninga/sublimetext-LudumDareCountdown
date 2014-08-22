@@ -12,8 +12,6 @@ Works with Sublime text 2 and 3
 
  - Clone or [download](https://github.com/fakeyou/sublimetext-LudumDareCountdown/archive/master.zip) git repo into your packages folder
 
-### Coming soon:
-
 Using [Package Control](http://wbond.net/sublime_packages/package_control):
 
  - Run “Package Control: Install Package” command, and find `LudumDareCountdown` package
