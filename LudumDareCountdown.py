@@ -4,11 +4,12 @@ from datetime import datetime
 LUDUMDARECOUNTDOWN_SETTINGS_FILE = 'LudumDareCountdown.sublime-settings'
 LUDUMDARECOUNTDOWN_INTERVAL_KEY = 'LudumDareCountdown_interval'
 LUDUMDARECOUNTDOWN_CATEGORY_KEY = 'LudumDareCountdown_category'
+LUDUMDARECOUNTDOWN_ONLYDEADLINECOUNTDOWN_KEY = 'LudumDareCountdown_showOnlyDeadlineCountdown'
 DEFAULT_FORMAT = '%H:%M:%S'
 
-LUDUM_START = datetime(2014, 8, 23, 1, 0, 0)
-COMPO_END   = datetime(2014, 8, 25, 1, 0, 0)
-JAM_END     = datetime(2014, 8, 26, 1, 0, 0)
+LUDUM_START = datetime(2014, 12, 6, 2, 0, 0)
+COMPO_END   = datetime(2014, 12, 8, 2, 0, 0)
+JAM_END     = datetime(2014, 12, 7, 2, 0, 0)
 
 class StatusBarLudumDareCountdown(sublime_plugin.EventListener):
 	def on_activated(self, view):
@@ -16,8 +17,9 @@ class StatusBarLudumDareCountdown(sublime_plugin.EventListener):
 
 		update_interval = settings.get(LUDUMDARECOUNTDOWN_INTERVAL_KEY, 1000)
 		category = settings.get(LUDUMDARECOUNTDOWN_CATEGORY_KEY, 'compo')
+		only_deadline_countdown = settings.get(LUDUMDARECOUNTDOWN_ONLYDEADLINECOUNTDOWN_KEY, False)
 
-		Countdown(DEFAULT_FORMAT).display_time(view, update_interval, category)
+		Countdown(DEFAULT_FORMAT).display_time(view, update_interval, category, only_deadline_countdown)
 
 class Countdown():
 	status_key = 'ludumDareCountdown'
@@ -33,7 +35,7 @@ class Countdown():
 
 		return days, hours, minutes, seconds
 
-	def display_time(self, view, update_interval, category):
+	def display_time(self, view, update_interval, category, only_deadline_countdown):
 		now = datetime.utcnow()
 		out = ''
 
@@ -43,7 +45,8 @@ class Countdown():
 			elif category == 'jam':
 				countdown = JAM_END - now
 		else:
-			countdown = LUDUM_START - now
+			if only_deadline_countdown == False:
+				countdown = LUDUM_START - now
 
 		if(countdown.total_seconds() > 0):
 			days, hours, minutes, seconds = self.convert_timedelta(countdown)
@@ -54,5 +57,5 @@ class Countdown():
 
 			view.set_status(self.status_key, out)
 
-			sublime.set_timeout(lambda: self.display_time(view, update_interval, category), update_interval)
+			sublime.set_timeout(lambda: self.display_time(view, update_interval, category, only_deadline_countdown), update_interval)
 
