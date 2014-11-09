@@ -30,9 +30,9 @@ Example config:
 	// jam - jam countdown (72 hour)
 	"LudumDareCountdown_category": "compo"
 
-  // Show only the deadline countdown
-  // No countdown will be show for the start of Ludum Dare
-  "LudumDareCountdown_showOnlyDeadlineCountdown": false
+	// Show only the deadline countdown
+	// No countdown will be show for the start of Ludum Dare
+	"LudumDareCountdown_showOnlyDeadlineCountdown": false
 }
 ```
 
