@@ -7,9 +7,9 @@ LUDUMDARECOUNTDOWN_CATEGORY_KEY = 'LudumDareCountdown_category'
 LUDUMDARECOUNTDOWN_ONLYDEADLINECOUNTDOWN_KEY = 'LudumDareCountdown_showOnlyDeadlineCountdown'
 DEFAULT_FORMAT = '%H:%M:%S'
 
-LUDUM_START = datetime(2016, 4, 16, 1, 0, 0)
-COMPO_END   = datetime(2016, 4, 18, 1, 0, 0)
-JAM_END     = datetime(2016, 4, 19, 1, 0, 0)
+LUDUM_START = datetime(2016, 8, 26, 1, 0, 0)
+COMPO_END   = datetime(2016, 8, 28, 1, 0, 0)
+JAM_END     = datetime(2016, 8, 29, 1, 0, 0)
 
 class StatusBarLudumDareCountdown(sublime_plugin.EventListener):
 	def on_activated(self, view):
